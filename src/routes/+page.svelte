@@ -1,7 +1,9 @@
 <script>
 	import Greeting from './Greeting.svelte';
 
-	const name = 'John';
+	let name = $state('John');
 </script>
 
 <Greeting {name} />
+
+<input type="text" bind:value={name} />
