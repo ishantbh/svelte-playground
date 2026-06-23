@@ -4,12 +4,16 @@
 	let name = $state('John');
 	let status: 'OPEN' | 'CLOSED' = $state('OPEN');
 
+	let full_name = $derived(name + ' ' + 'Doe');
+
 	function onclick() {
 		status = status === 'OPEN' ? 'CLOSED' : 'OPEN';
 	}
 </script>
 
 <Greeting {name} />
+
+<h2>{full_name}</h2>
 
 <input type="text" bind:value={name} />
 
