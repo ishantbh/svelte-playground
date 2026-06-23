@@ -3,13 +3,7 @@
 </script>
 
 <div>
-	{#if name}
-		<h1>{name}&apos;s form</h1>
-	{/if}
+	<h1>{name ? name : 'User'}&apos;s form</h1>
 </div>
 
-<style>
-	div {
-		border-bottom: 1px solid red;
-	}
-</style>
+<style></style>
