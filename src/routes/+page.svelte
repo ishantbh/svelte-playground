@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Header from './Header.svelte';
+
 	let formState = $state({
 		name: '',
 		birthday: '',
@@ -8,6 +10,8 @@
 </script>
 
 <main>
+	<Header name={formState.name} />
+
 	<p>Step: {formState.step + 1}</p>
 
 	{#if formState.error}
@@ -46,3 +50,15 @@
 		>
 	{/if}
 </main>
+
+<style>
+	:global(div) {
+		background: gray;
+	}
+	div {
+		border: 1px solid black;
+	}
+	.error {
+		color: red;
+	}
+</style>
