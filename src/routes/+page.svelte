@@ -32,8 +32,10 @@
 	<p>Step: {formState.step + 1}</p>
 
 	<!-- question.id is the `key` here -->
-	{#each QUESTIONS as question (question.id)}
-		{@render formStep(question)}
+	{#each QUESTIONS as question, index (question.id)}
+		{#if formState.step === index}
+			{@render formStep(question)}
+		{/if}
 	{/each}
 
 	{#if formState.error}
