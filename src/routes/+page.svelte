@@ -38,7 +38,11 @@
 <main>
 	<Header name={formState.answers.name} />
 
-	<p>Step: {formState.step + 1}</p>
+	{#if formState.step >= QUESTIONS.length}
+		<p>Thank You!</p>
+	{:else}
+		<p>Step: {formState.step + 1}</p>
+	{/if}
 
 	<!-- question.id is the `key` here -->
 	{#each QUESTIONS as question, index (question.id)}
