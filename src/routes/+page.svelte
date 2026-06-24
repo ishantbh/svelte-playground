@@ -7,6 +7,14 @@
 		step: 0,
 		error: ''
 	});
+
+	const QUESTIONS = [
+		{
+			question: "What's your name?",
+			id: 'name',
+			type: 'text'
+		}
+	];
 </script>
 
 <main>
@@ -14,7 +22,10 @@
 
 	<p>Step: {formState.step + 1}</p>
 
-	{@render formStep({ type: 'text', id: 'name', question: "What's your name" })}
+	<!-- question.id is the `key` here -->
+	{#each QUESTIONS as question (question.id)}
+		{@render formStep(question)}
+	{/each}
 
 	{#if formState.error}
 		<p class="error">{formState.error}</p>
