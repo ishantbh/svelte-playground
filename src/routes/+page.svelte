@@ -49,6 +49,7 @@
 			<label for={id}>{question}</label>
 			<input {type} {id} bind:value={formState.answers[id]} />
 		</div>
+		<button>Next</button>
 	</article>
 {/snippet}
 
