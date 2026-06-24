@@ -2,8 +2,7 @@
 	import Header from './Header.svelte';
 
 	let formState = $state({
-		name: '',
-		birthday: '',
+		answers: {},
 		step: 0,
 		error: ''
 	});
@@ -13,12 +12,22 @@
 			question: "What's your name?",
 			id: 'name',
 			type: 'text'
+		},
+		{
+			question: "When's your birthday?",
+			id: 'birthday',
+			type: 'date'
+		},
+		{
+			question: "What's your favorite color?",
+			id: 'color',
+			type: 'color'
 		}
 	];
 </script>
 
 <main>
-	<Header name={formState.name} />
+	<Header name={formState.answers.name} />
 
 	<p>Step: {formState.step + 1}</p>
 
@@ -36,7 +45,7 @@
 	<article>
 		<div>
 			<label for={id}>{question}</label>
-			<input {type} {id} bind:value={formState[id]} />
+			<input {type} {id} bind:value={formState.answers[id]} />
 		</div>
 	</article>
 {/snippet}
