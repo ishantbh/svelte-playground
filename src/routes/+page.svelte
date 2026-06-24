@@ -24,6 +24,15 @@
 			type: 'color'
 		}
 	];
+
+	function nextStep(id: string) {
+		if (formState.answers[id]) {
+			formState.step++;
+			formState.error = '';
+		} else {
+			formState.error = 'Please fill the form input';
+		}
+	}
 </script>
 
 <main>
@@ -49,7 +58,7 @@
 			<label for={id}>{question}</label>
 			<input {type} {id} bind:value={formState.answers[id]} />
 		</div>
-		<button>Next</button>
+		<button onclick={() => nextStep(id)}>Next</button>
 	</article>
 {/snippet}
 
