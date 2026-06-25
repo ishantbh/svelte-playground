@@ -34,20 +34,22 @@
 		}
 	}
 
+	$inspect(formState.step);
+
 	// Will run onMount
 	$effect(() => {
-		console.log('on mounted');
+		// console.log('on mounted');
 
 		return () => {
 			// when unmounted or destroyed
 			// before effect re-runs
-			console.log('on unmounted');
+			// console.log('on unmounted');
 		};
 	});
 
 	$effect(() => {
 		// This will re-run, when formState.step has changed
-		console.log('formState', formState.step);
+		// console.log('formState', formState.step);
 	});
 </script>
 
