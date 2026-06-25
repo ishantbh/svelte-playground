@@ -33,6 +33,17 @@
 			formState.error = 'Please fill the form input';
 		}
 	}
+
+	// Will run onMount
+	$effect(() => {
+		console.log('on mounted');
+
+		return () => {
+			// when unmounted or destroyed
+			// before effect re-runs
+			console.log('on unmounted');
+		};
+	});
 </script>
 
 <main>
