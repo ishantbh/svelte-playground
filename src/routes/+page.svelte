@@ -44,6 +44,11 @@
 			console.log('on unmounted');
 		};
 	});
+
+	$effect(() => {
+		// This will re-run, when formState.step has changed
+		console.log('formState', formState.step);
+	});
 </script>
 
 <main>
